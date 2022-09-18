@@ -50,13 +50,30 @@ public:
 
 };
 
+class Teacher:public Employee{
+public:
+    string subject;
+
+    void tea(){
+        std::cout << Name << " teaching"<< subject<<" lesson";
+    }
+    Teacher(string name,string com,int age,string sub):Employee(name,com,age){
+        subject=sub;
+    }
+     
+};
+
 
 
 
 int main(){
     // Employee emp1=Employee("Abhi","dgf",22);
     // emp1.display();
-    Developer dev = Developer("abhi", "gritstone", 25, "Kasargode");
+    // Developer dev = Developer("abhi", "gritstone", 25, "Kasargode");
 
-    dev.promotion();
+    // dev.promotion();
+
+    Teacher teach=Teacher("shamil","grit",40,"AI");
+    teach.tea();
+    teach.promotion();
 }

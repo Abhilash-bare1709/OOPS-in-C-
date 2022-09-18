@@ -1,7 +1,14 @@
 #include <iostream>
 using std::string;
 
-class Employee{
+class Abstrcls{
+
+    virtual void promotion()=0;
+
+};
+
+
+class Employee:Abstrcls{
 protected:
     string Name;
     string Company;
@@ -12,6 +19,18 @@ public:
         Name = name;
         Company = com;
         Age = age;
+    }
+
+    void promotion(){
+        if (Age>35)
+
+        std::cout<<Name<<"Promoted";
+
+        else
+
+        std::cout<<Name<<" Not Promoted";
+
+
     }
 };
 
@@ -38,4 +57,6 @@ int main(){
     // Employee emp1=Employee("Abhi","dgf",22);
     // emp1.display();
     Developer dev = Developer("abhi", "gritstone", 25, "Kasargode");
+
+    dev.promotion();
 }
